@@ -1,0 +1,29 @@
+<!-- NEWSLETTER -->
+<div id="newsletter">
+    <div class="d-flex justify-content-center  text-center" style="background-color:#b4474a">
+        <div class="col-lg-3 col-sm-12 ">
+            <h2 class="pt-3" style="color:#fffcdc">Newsletter</h2>
+            <h5 class="pb-2 text-white"> Receba nossos informativos.</h5>
+
+
+            <div class="col-12">
+                {% if email %}
+                <p><div class="alert alert-secondary" role="alert">{{ email }} foi {{ action }}.</div></p>
+                {% endif %}
+            </div>
+            <div class=" mb-2">
+                {% if form_n %}
+
+                <form method="post" >
+                    {% csrf_token %}
+                    <label class="b h6 text-white" for="id_email">digite seu email</label>
+                    {{ form_n.email }}
+                    <br>
+                    <input type="submit" name="newsletter" class="btn btn-dark">
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- FIM NEWSLETTER -->

@@ -1,0 +1,109 @@
+{% load static %}
+<!-- CONTATO -->
+
+
+<div class="container-fluid" id="atendimento">
+    <div class="row">
+
+        <div class="d-flex justify-content-center col-lg-6 col-sm-12" style="background-color:#f5f5f5">
+
+            <div class="col-8 my-4  ">
+                <h2 class="text-center">Email:</h2><br>
+                {% load widget_tweaks %}
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                    {% endfor %}
+                    {% if nome %}
+                    <p>
+                    <div class="alert alert-secondary" role="alert">{{ nome }} {{ action }}.</div>
+                    </p>
+                    {% endif %}
+                    <div class="row">
+
+
+                        <div class="form-group col-lg-5 col-sm-12 ">
+                            <label for="id_nome">Nome:</label>
+                            <input type="text" name="nome" class="form-control" id="id_nome" required>
+
+                        </div>
+
+
+                        <div class="form-group col-lg-5 col-sm-12 ">
+                            <label for="id_email">Email:</label>
+                            <input type="email" name="email" class="form-control" id="id_email" required>
+
+                        </div>
+
+
+                        <div class="form-group col-lg-5 col-sm-12 ">
+                            <label for="id_telefone">Telefone:</label>
+                            <input type="text" data-mask="(00)0000-00000" name="telefone" class="form-control"
+                                   id="id_telefone" required>
+
+                        </div>
+
+
+                        <div class="form-group col-lg-5 col-sm-12 ">
+                            <label for="id_assunto">Assunto:</label>
+                            <input type="text" name="assunto" class="form-control" id="id_assunto" required>
+
+                        </div>
+
+
+                        <div class="form-group col-12 ">
+                            <label for="id_mensagem">Mensagem:</label>
+                            <textarea name="mensagem" cols="40" rows="10" class="form-control" id="id_mensagem"
+                                      required></textarea>
+
+                        </div>
+                        <input type="submit" name="email_s" class="btn btn-danger">
+
+                    </div>
+
+
+                </form>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center col-lg-4 col-sm-12">
+
+            <l>
+
+                <h1 class="titulog mt-5">Contato</h1>
+
+                <p>
+                    <img src="{% static 'parts/iconloc.jpg' %}">
+                    <b>Endereço:</b> <br>
+                    Francisco Cipriano do Amaral, <br>
+                    238 - Jardim Colorado
+                </p>
+
+                <p>
+                    <img src="{% static 'parts/icontel.jpg' %}">
+                    <b>Telefones:</b> <br>
+                    +55 (12) 3911-9496 <br>
+                    +55 (12) 99717-3318 <br>
+
+                    <!-- FIM CONTATO -->
+                </p>
+
+                <p>
+                    <img src="{% static 'parts/iconemail.jpg' %}">
+                    <b>E-mail:</b> <br>
+                    comercial@secmil.com.br <br>
+                    <!-- arnaldo.rochel@meggitt.com -->
+                </p>
+
+
+            </l>
+        </div>
+
+    </div>
+</div>
+
+<!-- FIM CONTATO -->
