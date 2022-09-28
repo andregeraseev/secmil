@@ -1,0 +1,9 @@
+
+{% autoescape off %}
+Obrigado por assinar nossa newsletter!
+para completar o processo clique no link abaixo:
+
+{{ protocol }}://{{ domain }}{% url 'confirm'  %}?email={{ sub.email }}&conf_num={{ sub.conf_num }}
+
+
+{% endautoescape %}
