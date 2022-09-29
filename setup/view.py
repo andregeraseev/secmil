@@ -53,7 +53,7 @@ def index(request):
 
             from_email = 'ageraseev@gmail.com'
             to_emails = request.POST['email']
-            subject = 'Confirmação Newsletter '
+            subject = 'Confirmação Newsletter Secmil'
             message = 'mail/inscricao.html'
             c = {
                 'sub' : sub,
@@ -68,7 +68,7 @@ def index(request):
             # response = sg.send(message)
 
             try:
-                send_mail("teste", email, from_email, [to_emails],html_message=html_message)
+                send_mail(subject, email, from_email, [to_emails],html_message=html_message)
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
 
