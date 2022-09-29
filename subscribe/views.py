@@ -39,6 +39,6 @@ def delete(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
         sub.delete()
-        return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'seu email foi retirada na nossa Newsletter'})
+        return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'retirada na nossa Newsletter'})
     else:
         return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'negado'})
