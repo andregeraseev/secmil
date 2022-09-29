@@ -31,14 +31,14 @@ def confirm(request):
     if sub.conf_num == request.GET['conf_num']:
         sub.confirmed = True
         sub.save()
-        return render(request, 'index.html', {'email': sub.email, 'action': 'confirmado'})
+        return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'confirmado'})
     else:
-        return render(request, 'index.html', {'email': sub.email , 'ação': 'negado'})
+        return render(request, 'delete_confirm.html', {'email': sub.email , 'action': 'negado'})
 
 def delete(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
         sub.delete()
-        return render(request, 'index.html', {'email': sub.email, 'action': 'desiscrito'})
+        return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'seu email foi retirada na nossa Newsletter'})
     else:
-        return render(request, 'index.html', {'email': sub.email, 'action': 'negado'})
+        return render(request, 'delete_confirm.html', {'email': sub.email, 'action': 'negado'})
