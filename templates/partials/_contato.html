@@ -2,13 +2,13 @@
 <!-- CONTATO -->
 
 
-<div class="container-fluid" id="atendimento">
+<div class="container-fluid anchor-link" id="atendimento">
     <div class="row">
 
         <div class="d-flex justify-content-center col-lg-6 col-sm-12" style="background-color:#f5f5f5">
 
-            <div class="col-8 my-4  ">
-                <h2 class="text-center">Email:</h2><br>
+            <div class="col-8 mt-2  ">
+                <h2 class="">Email</h2><br>
                 {% load widget_tweaks %}
                 <form method="post">
                     {% csrf_token %}
@@ -55,11 +55,11 @@
 
                         <div class="form-group col-12 ">
                             <label for="id_mensagem">Mensagem:</label>
-                            <textarea name="mensagem" cols="40" rows="10" class="form-control" id="id_mensagem"
+                            <textarea name="mensagem" cols="40" rows="8" class="form-control" id="id_mensagem"
                                       required></textarea>
 
                         </div>
-                        <input type="submit" name="email_s" class="btn btn-danger">
+                        <input type="submit" name="email_s" class="btn btn-danger mb-2">
 
                     </div>
 
@@ -74,7 +74,7 @@
 
             <l>
 
-                <h1 class="titulog mt-5">Contato</h1>
+                <h1 class="titulog mt-2">Contato</h1>
 
                 <p>
                     <img src="{% static 'parts/iconloc.jpg' %}">
